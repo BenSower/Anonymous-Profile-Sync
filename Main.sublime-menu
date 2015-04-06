@@ -1,0 +1,18 @@
+[
+{
+    "id" : "tools",
+    "children":
+	[{     
+		"id" : "sublime-profile",
+		"caption" : "Sublime-Profile",
+		"children":[{
+				"caption" : "Save Profile",
+				"command" : "save_profile"
+			},{
+				"caption" : "Import Profile",
+				"command" : "import_profile"
+			}
+		]
+	}]
+}
+]
