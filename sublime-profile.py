@@ -58,9 +58,14 @@ class import_profileCommand(sublime_plugin.TextCommand):
         imported_settings = json.loads(imported_settings)
         #print (imported_settings)
 
+        #reformat json
+        imported_settings.pop('__v')
+        imported_settings['profile_id'] = imported_settings.pop('_id')
+
         #overwrite old settings file
         with open(installed_packages_path, 'w') as outfile:
             json.dump(imported_settings, outfile, indent = 4)
-
+        sublime.message_dialog("Your profile with id %s was successfully imported. \n Restart Sublime Text to automatically install the imported packages." % imported_settings['profile_id'])
+            
 
 # 552316a8e459a40300f6a4b7
