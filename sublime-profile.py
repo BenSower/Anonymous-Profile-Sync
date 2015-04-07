@@ -5,7 +5,7 @@ import http.client
 import json
 
 
-class save_profileCommand(sublime_plugin.TextCommand):
+class upload_profileCommand(sublime_plugin.TextCommand):
 
     server_url = 'sublime-profile.herokuapp.com'
     api_path = '/api/profiles'
@@ -65,7 +65,7 @@ class import_profileCommand(sublime_plugin.TextCommand):
         #overwrite old settings file
         with open(installed_packages_path, 'w') as outfile:
             json.dump(imported_settings, outfile, indent = 4)
-        sublime.message_dialog("Your profile with id %s was successfully imported. \n Restart Sublime Text to automatically install the imported packages." % imported_settings['profile_id'])
+        sublime.message_dialog("Your profile with id %s was successfully imported. \nRestart Sublime Text to automatically install the imported packages." % imported_settings['profile_id'])
             
 
 # 552316a8e459a40300f6a4b7
